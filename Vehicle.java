@@ -22,7 +22,7 @@ public class Vehicle
   }//calcScore
 
 
-  public void addRide(ride addedRide)
+  public void addRide(Ride addedRide)
   {
     //check for overlaps
     for(int rideNo = 0; rideNo < rideCount; rideNo ++)
@@ -33,15 +33,18 @@ public class Vehicle
       }
     }
 
-    int rideIndex = -1;;
+    int newRideIndex = 0;
 
     for(int rideNo = rideNo-1;rideNo>=0;rideNo--)
     {
       if(addedRide.before(vehicleRides[rideNo]))
       {//if the new ride will come before a current array ride, it moves the current ride forwasrd
         vehicleRides[rideNo+1]=vehicleRides[rideNo];
-      }else if(rideIndex==-1){rideIndex=rideNo}
+      }else if(newRideIndex==0){newRideIndex=rideNo;}
     }
+    
+    vehicleRides[newRideIndex]=addedRide;
+    
 
   }//addRide
 
@@ -50,7 +53,7 @@ public class Vehicle
     for(int rideNo = index;rideNo<rideCount-1;rideNo++)
     {
 
-      vehicleRides[index] = vehicleRides[index]+1;
+      vehicleRides[index] = vehicleRides[index+1];
       rideCount--;
   
     }//push all the rides back an index and decrease count
