@@ -8,7 +8,7 @@ public class Ride
   private final int latestFinish;
 
   public Ride(Intersection startInt, Intersection endInt, int earliestStart, int latestFinish)
-  {  //test comment, constructor for ride
+  { 
     this.startInt = startInt;
     this.endInt = endInt;
     this.earliestStart = earliestStart;
