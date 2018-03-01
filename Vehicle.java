@@ -16,6 +16,8 @@ public class Vehicle
   public Vehicle(Ride[] vehicleRides)
   {
     this.vehicleRides = vehicleRides;
+    this.bonus=0;
+    this.rideCount=0;
   }//Vehicle
 
   public int calcScore()
@@ -33,11 +35,13 @@ public class Vehicle
 
       T+=GHCDC.distance(currentRide.startInt,currentRide.endInt);
 
-      if(T<=currentRide.latestFinis)
+      if(T<=currentRide.latestFinish)
       {
         score+=GHCDC.distance(currentRide.startInt,currentRide.endInt);
       }
     }
+
+    return score;
    
   }//calcScore
 

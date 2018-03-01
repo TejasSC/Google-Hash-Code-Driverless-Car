@@ -18,17 +18,25 @@ public class Ride
    
   public boolean Overlap(Ride ride)
   {
-    return true;
+
+    boolean overlap = false;
+
+    for(int time = earliestStart; time <= latestFinishi;time ++)
+    {
+      if(time>ride.earliestStart&&time<latestFinish){overlap=true};
+    }
+
+    return overlap
   }// Overlap
 
   public boolean Before(Ride ride) 
   {
-    return true;
+    return (this.earliestStart<ride.earliestStart);
 
   }//Before
 
   public boolean After(Ride ride)
   {
-    return true;
+    return (ride.latestFinish<this.latestFinish);
   }// After
 }//Ride
