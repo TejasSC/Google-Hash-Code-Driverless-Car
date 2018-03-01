@@ -21,12 +21,12 @@ public class Ride
 
     boolean overlap = false;
 
-    for(int time = earliestStart; time <= latestFinishi;time ++)
+    for(int time = earliestStart; time <= latestFinish;time ++)
     {
-      if(time>ride.earliestStart&&time<latestFinish){overlap=true};
+      if(time>ride.earliestStart&&time<latestFinish){overlap=true;}
     }
 
-    return overlap
+    return overlap;
   }// Overlap
 
   public boolean Before(Ride ride) 
