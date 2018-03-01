@@ -8,10 +8,20 @@ public class Vehicle
   public Vehicle()
   {
 
-  }//Rides
+  }//Vehicle
 
   public Vehicle(Ride[] vehicleRides)
   {
     this.vehicleRides = vehicleRides;
-  }
+  }//Vehicle
+
+  public int calcScore()
+  {
+    return 0;
+  }//calcScore
+
+  public void addRide()
+  {
+  
+  }//addRide
 }
